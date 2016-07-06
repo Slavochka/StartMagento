@@ -6,6 +6,25 @@
         </Help_Faq>
     </modules>
     <global>
+        <blocks>
+            <helpfaq>
+                <class>Help_Faq_Block</class>
+            </helpfaq>
+        </blocks>
+        <models>
+            <helpfaq>
+                <class>Help_Faq_Model</class>
+                <resourceModel>helpfaq_resource</resourceModel>
+            </helpfaq>
+            <helpfaq_resource>
+                <class>Help_Faq_Model_Resource</class>
+                <entities>
+                    <table_faq>
+                        <table>help_faq_entities</table>
+                    </table_faq>
+                </entities>
+            </helpfaq_resource>
+        </models>
         <resources>
             <helpfaq_setup>
                 <setup>
@@ -13,12 +32,49 @@
                 </setup>
             </helpfaq_setup>
         </resources>
+        <helpers>
+            <helpfaq>
+                <class>Help_Faq_Helper</class>
+            </helpfaq>
+        </helpers>
     </global>
     <admin>
-
+        <routers>
+            <helpfaq_admin>
+                <use>admin</use>
+                <args>
+                    <module>Help_Faq</module>
+                    <frontName>helpfaq_admin</frontName>
+                </args>
+            </helpfaq_admin>
+        </routers>
     </admin>
+    <adminhtml>
+        <menu>
+            <helpfaq module="helpfaq">
+                <title>FAQ</title>
+                <sort_order>77</sort_order>
+                <action>helpfaq_admin/adminhtml_faq</action>
+            </helpfaq>
+        </menu>
+    </adminhtml>
     <frontend>
-
+        <layout>
+            <updates>
+                <helpfaq>
+                    <file>help_faq.xml</file>
+                </helpfaq>
+            </updates>
+        </layout>
+        <routers>
+            <helpfaq>
+                <use>standard</use>
+                <args>
+                    <module>Help_Faq</module>
+                    <frontName>faq</frontName>
+                </args>
+            </helpfaq>
+        </routers>
     </frontend>
     <default>
 
