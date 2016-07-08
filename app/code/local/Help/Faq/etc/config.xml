@@ -52,9 +52,16 @@
     <adminhtml>
         <menu>
             <helpfaq module="helpfaq">
-                <title>FAQ</title>
+                <title>User interaction</title>
                 <sort_order>77</sort_order>
-                <action>helpfaq_admin/adminhtml_faq</action>
+                <!--action>helpfaq_admin/adminhtml_faq</action-->
+                <children>
+                    <helpfaq_faq translate="title" module="helpfaq">
+                        <title>FAQ</title>
+                        <sort_order>10</sort_order>
+                        <action>helpfaq_admin/adminhtml_faq</action>
+                    </helpfaq_faq>
+                </children>
             </helpfaq>
         </menu>
     </adminhtml>
