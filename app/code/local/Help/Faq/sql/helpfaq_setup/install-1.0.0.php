@@ -19,6 +19,9 @@ $table = $installer->getConnection()
     ->addColumn('email', Varien_Db_Ddl_Table::TYPE_TEXT, '50', array(
         'nullable'  => false,
     ))
+    ->addColumn('title', Varien_Db_Ddl_Table::TYPE_TEXT, '250', array(
+        'nullable'  => true,
+    ))
     ->addColumn('content', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
         'nullable'  => false,
     ))

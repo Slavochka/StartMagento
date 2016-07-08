@@ -16,7 +16,7 @@ class Help_Faq_Block_Adminhtml_Faq_Grid extends Mage_Adminhtml_Block_Widget_Grid
         $helper = Mage::helper('helpfaq');
 
         $this->addColumn('faq_id', array(
-            'header' => $helper->__('Faq ID'),
+            'header' => $helper->__('FAQ ID'),
             'index' => 'faq_id'
         ));
 
@@ -32,10 +32,33 @@ class Help_Faq_Block_Adminhtml_Faq_Grid extends Mage_Adminhtml_Block_Widget_Grid
             'type' => 'text',
         ));
 
+        $this->addColumn('title', array(
+            'header' => $helper->__('Title'),
+            'index' => 'title',
+            'type' => 'text',
+        ));
+
+        $this->addColumn('content', array(
+            'header' => $helper->__('Content'),
+            'index' => 'content',
+            'type' => 'text',
+        ));
+
         $this->addColumn('created', array(
             'header' => $helper->__('Created'),
             'index' => 'created',
             'type' => 'date',
+        ));
+
+        $this->addColumn('status', array(
+            'header' => $helper->__('Status'),
+            'index' => 'status',
+            'type' => 'text',
+        ));
+
+        $this->addColumn('action', array(
+            'header' => $helper->__('Action'),
+            'type' => 'text',
         ));
 
         return parent::_prepareColumns();
@@ -51,5 +74,12 @@ class Help_Faq_Block_Adminhtml_Faq_Grid extends Mage_Adminhtml_Block_Widget_Grid
             'url' => $this->getUrl('*/*/massDelete'),
         ));
         return $this;
+    }
+
+    public function getRowUrl($model)
+    {
+        return $this->getUrl('*/*/edit', array(
+            'id' => $model->getId(),
+        ));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Help_Faq_Block_Adminhtml_Faq extends Mage_Adminhtml_Block_Abstract
+class Help_Faq_Block_Adminhtml_Faq extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
     protected function _construct()
     {
