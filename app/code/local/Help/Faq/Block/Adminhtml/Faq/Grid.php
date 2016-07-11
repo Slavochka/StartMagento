@@ -16,7 +16,7 @@ class Help_Faq_Block_Adminhtml_Faq_Grid extends Mage_Adminhtml_Block_Widget_Grid
         $helper = Mage::helper('helpfaq');
 
         $this->addColumn('faq_id', array(
-            'header' => $helper->__('FAQ ID'),
+            'header' => $helper->__('ID'),
             'index' => 'faq_id'
         ));
 
@@ -53,7 +53,12 @@ class Help_Faq_Block_Adminhtml_Faq_Grid extends Mage_Adminhtml_Block_Widget_Grid
         $this->addColumn('status', array(
             'header' => $helper->__('Status'),
             'index' => 'status',
-            'type' => 'text',
+            'type' => 'options',
+            'options'   => array(
+                1 => $helper->__('New'),
+                2 => $helper->__('Approved'),
+                3 => $helper->__('Rejected'),
+            ),
         ));
 
         $this->addColumn('action', array(

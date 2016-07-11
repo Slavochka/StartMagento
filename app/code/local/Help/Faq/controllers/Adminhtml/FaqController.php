@@ -9,12 +9,12 @@ class Help_Faq_Adminhtml_FaqController extends Mage_Adminhtml_Controller_Action
         $this->_addContent($this->getLayout()->createBlock('helpfaq/adminhtml_faq'));
         $this->renderLayout();
     }
-
+/*
     public function newAction()
     {
         $this->_forward('edit');
     }
-
+*/
     public function editAction()
     {
         $id = (int) $this->getRequest()->getParam('id');

@@ -21,6 +21,18 @@ class Help_Faq_Block_Adminhtml_Faq_Edit_Form extends Mage_Adminhtml_Block_Widget
 
         $fieldset = $form->addFieldset('Faq_form', array('legend' => $helper->__('Faq Information')));
 
+        $fieldset->addField('name', 'text', array(
+            'label' => $helper->__('Name'),
+            'required' => true,
+            'name' => 'name',
+        ));
+
+        $fieldset->addField('email', 'text', array(
+            'label' => $helper->__('Email'),
+            'required' => true,
+            'name' => 'email',
+        ));
+
         $fieldset->addField('title', 'text', array(
             'label' => $helper->__('Title'),
             'required' => true,
@@ -35,9 +47,21 @@ class Help_Faq_Block_Adminhtml_Faq_Edit_Form extends Mage_Adminhtml_Block_Widget
 
         $fieldset->addField('created', 'date', array(
             'format' => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
+            'required' => true,
             'image' => $this->getSkinUrl('images/grid-cal.gif'),
             'label' => $helper->__('Created'),
             'name' => 'created'
+        ));
+
+        $fieldset->addField('status', 'select', array(
+            'label' => $helper->__('Status'),
+            'required' => true,
+            'name' => 'status',
+            'values' => array(
+                '-1' => 'Select...',
+                '1' => 'New',
+                '2' => 'Approved',
+                '3' => 'Rejected')
         ));
 
         $form->setUseContainer(true);
