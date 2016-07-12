@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layout>
+    <helpfaq_index_index>
+        <reference name="content">
+            <block type="helpfaq/faq" template="help_faq/index.phtml" />
+        </reference>
+    </helpfaq_index_index>
+    <helpfaq_index_view>
+        <reference name="content">
+            <block type="helpfaq/view" name="faq.content" template="help_faq/view.phtml" />
+        </reference>
+    </helpfaq_index_view>
+</layout>
