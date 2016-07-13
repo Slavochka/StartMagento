@@ -8,4 +8,9 @@ class Help_Faq_Block_Faq extends Mage_Core_Block_Template
         $faqCollection->setOrder('created', 'DESC');
         return $faqCollection;
     }
+
+    public function getActionOfForm()
+    {
+        return $this->getUrl('faq/index');
+    }
 }
