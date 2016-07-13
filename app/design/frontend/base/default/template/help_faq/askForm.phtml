@@ -1,0 +1,15 @@
+</br></br>
+
+<h2>
+    <?php echo $this->__('Задать свой вопрос') ?>
+</h2>
+
+<form action="<?php echo $this->getActionOfForm()?>" method="post" >
+    <p> <?php echo "Введите имя"?><em>*</em>
+        <br> <input type="text" size="50" id="name" name="name"> </p>
+    <p> <br><?php echo "Введите адрес эл. почты"?><em>*</em>
+        <br><input type="text" size="50" id="email" name="email"> </p>
+    <p> <br><?php echo "Введите текст вопроса"?><em>*</em>
+        <br><textarea name="content" cols="40" rows="3" id="content" name="content"></textarea> </p>
+    <p><br><input type="submit" value="Спросить"></p>
+</form>
