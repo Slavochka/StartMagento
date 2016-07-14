@@ -58,7 +58,6 @@ class Help_Faq_Block_Adminhtml_Faq_Edit_Form extends Mage_Adminhtml_Block_Widget
             'required' => true,
             'name' => 'status',
             'values' => array(
-                '-1' => 'Select...',
                 '1' => 'New',
                 '2' => 'Approved',
                 '3' => 'Rejected')
