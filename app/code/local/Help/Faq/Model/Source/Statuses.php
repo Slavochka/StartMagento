@@ -13,4 +13,13 @@ class Help_Faq_Model_Source_Statuses extends Varien_Data_Collection
         );
         return $statuses;
     }
+
+    public function getOptions() 
+    {
+        $options = array();
+        foreach ($this->toOptionArray() as $option) {
+            $options[$option['value']] = $option['label'];
+        }
+        return $options;
+    }
 }
