@@ -2,7 +2,9 @@
 <layout>
     <helpfaq_index_index>
         <reference name="content">
-            <block type="helpfaq/faq" template="help_faq/index.phtml" />
+            <block type="helpfaq/faq" name="show_faq" template="help_faq/index.phtml">
+                <block type="helpfaq/faq" name="question" as="ask" template="help_faq/askForm.phtml" />
+            </block>
         </reference>
     </helpfaq_index_index>
     <helpfaq_index_view>

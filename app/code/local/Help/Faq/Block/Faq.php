@@ -11,6 +11,6 @@ class Help_Faq_Block_Faq extends Mage_Core_Block_Template
 
     public function getActionOfForm()
     {
-        return $this->getUrl('faq/index');
+        return $this->getUrl('faq/index/save');
     }
 }

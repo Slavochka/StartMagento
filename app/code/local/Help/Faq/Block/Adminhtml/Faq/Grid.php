@@ -12,7 +12,7 @@ class Help_Faq_Block_Adminhtml_Faq_Grid extends Mage_Adminhtml_Block_Widget_Grid
 
     protected function _prepareColumns()
     {
-
+        $statuses = Mage::getModel('helpfaq/source_statuses')->toOptionArray();
         $helper = Mage::helper('helpfaq');
 
         $this->addColumn('faq_id', array(
@@ -54,11 +54,12 @@ class Help_Faq_Block_Adminhtml_Faq_Grid extends Mage_Adminhtml_Block_Widget_Grid
             'header' => $helper->__('Status'),
             'index' => 'status',
             'type' => 'options',
-            'options'   => array(
+            'options' => $statuses,
+                /*array(
                 1 => $helper->__('New'),
                 2 => $helper->__('Approved'),
                 3 => $helper->__('Rejected'),
-            ),
+            ),*/
         ));
 
         $this->addColumn('action', array(

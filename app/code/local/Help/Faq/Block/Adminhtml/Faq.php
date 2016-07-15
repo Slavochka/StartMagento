@@ -17,6 +17,5 @@ class Help_Faq_Block_Adminhtml_Faq extends Mage_Adminhtml_Block_Widget_Grid_Cont
 
 
         $this->_headerText = $helper->__('Faq Management');
-        //$this->_addButtonLabel = $helper->__('Add Faq');
     }
 }

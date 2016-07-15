@@ -27,23 +27,23 @@ class Help_Faq_IndexController extends Mage_Core_Controller_Front_Action
 
     public function saveAction()
     {
-        $name = ''.$this->getRequest()->getPost('name');
-        $email = ''.$this->getRequest()->getPost('email');
-        $content = ''.$this->getRequest()->getPost('content');
-
-        $date = new DateTime('YmdHis');
-
-        if(isset($name)&&($name!='') && isset($email)&&($email!='')
-            && isset($content)&&($content!='') )
+        if ($data = $this->getRequest()->getPost())
         {
-            $faq = Mage::getModel('helpfaq/faq');
-            $faq->setData('name', $name);
-            $faq->setData('email', $email);
-            $faq->setData('content', $content);
-            $faq->setData('created', $date);
-            $faq->setData('status', "1");
-            $faq->save();
+            try {
+                $faq = Mage::getModel('helpfaq/faq');
+                $faq->setData($data)->setName($this->getRequest()->getParam('name'));
+                $faq->setData($data)->setEmail($this->getRequest()->getParam('email'));
+                $faq->setData($data)->setContent($this->getRequest()->getParam('content'));
+                $faq->setData($data)->setCreated(now());
+                $faq->setData($data)->setStatus(1);
+                $faq->save();
+
+                Mage::getSingleton('core/session')->addSuccess($this->__('Question was added successfully'));
+                $this->_redirect('faq/index/index');
+            } catch (Exception $e) {
+                Mage::getSingleton('core/session')->addError($e->getMessage());
+                $this->_redirect('faq/index/index');
+            }
         }
-        $this->_redirect('faq/index/index');
     }
 }
