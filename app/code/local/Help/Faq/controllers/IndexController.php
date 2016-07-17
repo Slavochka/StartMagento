@@ -36,11 +36,12 @@ class Help_Faq_IndexController extends Mage_Core_Controller_Front_Action
                 $faq->save();
 
                 Mage::getSingleton('core/session')->addSuccess($this->__('Question was added successfully'));
-                $this->_redirect('faq/index/index');
+                //$this->_redirect('faq/index/index');
             } catch (Exception $e) {
                 Mage::getSingleton('core/session')->addError($e->getMessage());
-                $this->_redirect('faq/index/index');
+                //$this->_redirect('faq/index/index');
             }
         }
+        $this->_redirect('faq/index/index');
     }
 }
