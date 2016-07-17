@@ -30,12 +30,9 @@ class Help_Faq_IndexController extends Mage_Core_Controller_Front_Action
         if ($data = $this->getRequest()->getPost())
         {
             try {
-                $faq = Mage::getModel('helpfaq/faq');
-                $faq->setData($data)->setName($this->getRequest()->getParam('name'));
-                $faq->setData($data)->setEmail($this->getRequest()->getParam('email'));
-                $faq->setData($data)->setContent($this->getRequest()->getParam('content'));
-                $faq->setData($data)->setCreated(now());
-                $faq->setData($data)->setStatus(1);
+                $faq = Mage::getModel('helpfaq/faq')->setData($data);
+                $faq->setCreated(now());
+                $faq->setStatus(1);
                 $faq->save();
 
                 Mage::getSingleton('core/session')->addSuccess($this->__('Question was added successfully'));
