@@ -18,7 +18,7 @@ class Help_Faq_Block_Adminhtml_Faq_Edit_Form extends Mage_Adminhtml_Block_Widget
         ));
 
         $this->setForm($form);
-
+        $statuses = Mage::getModel('helpfaq/source_statuses')->getOptions();
         $fieldset = $form->addFieldset('Faq_form', array('legend' => $helper->__('Faq Information')));
 
         $fieldset->addField('name', 'text', array(
@@ -57,10 +57,7 @@ class Help_Faq_Block_Adminhtml_Faq_Edit_Form extends Mage_Adminhtml_Block_Widget
             'label' => $helper->__('Status'),
             'required' => true,
             'name' => 'status',
-            'values' => array(
-                '1' => 'New',
-                '2' => 'Approved',
-                '3' => 'Rejected')
+            'values' => $statuses,
         ));
 
         $form->setUseContainer(true);

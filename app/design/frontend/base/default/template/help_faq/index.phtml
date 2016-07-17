@@ -1,21 +1,9 @@
 <?php
-$faq = $this->getFaqCollection();
-$breadcrumbs = $this->getLayout()->getBlock('breadcrumbs');
-
-$breadcrumbs->addCrumb(
-    'home', array('label'=>Mage::helper('cms')->__('Home'),
-    'title'=>Mage::helper('cms')->__('Home Page'),
-    'link'=>Mage::getBaseUrl()));
-echo $this->getLayout()->getBlock('breadcrumbs')->toHtml();
+    $faq = $this->getFaqCollection();
 ?>
-<!--$faqViewUrl = Mage::getUrl('faq/index/view');?-->
-
     <h1>FAQ</h1>
 <?php foreach ($faq as $item): ?>
     <h3>
-        <!--a href="<?php echo $faqViewUrl; ?>?id=<?php echo $item->getId(); ?>">
-            <?php echo $item->getTitle(); ?>
-        </a-->
         <?php
         if ($item->getStatus() == 2) {
             echo $item->getTitle(); ?>
@@ -25,3 +13,4 @@ echo $this->getLayout()->getBlock('breadcrumbs')->toHtml();
         }
             ?>
 <?php endforeach; ?>
+<?php echo $this->getChildHtml('ask'); ?>
