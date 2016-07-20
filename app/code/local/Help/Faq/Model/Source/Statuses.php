@@ -2,14 +2,18 @@
 
 class Help_Faq_Model_Source_Statuses extends Varien_Data_Collection
 {
+    const NEW_QUESTION = 1;
+    const APPROVED_QUESTION = 2;
+    const REJECTED_QUESTION = 3;
+
     public function toOptionArray()
     {
         $helper = Mage::helper('helpfaq');
 
         $statuses = array(
-            array('value' => '1', 'label' => $helper->__('New')),
-            array('value' => '2', 'label' => $helper->__('Approved')),
-            array('value' => '3', 'label' => $helper->__('Rejected')),
+            array('value' => self::NEW_QUESTION, 'label' => $helper->__('New')),
+            array('value' => self::APPROVED_QUESTION, 'label' => $helper->__('Approved')),
+            array('value' => self::REJECTED_QUESTION, 'label' => $helper->__('Rejected')),
         );
         return $statuses;
     }
