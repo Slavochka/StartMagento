@@ -26,8 +26,10 @@ class Help_Faq_Block_Faq extends Mage_Core_Block_Template
 
     public function getFaqCollection()
     {
-        $faqCollection = Mage::getModel('helpfaq/faq')->getCollection();
-        $faqCollection->setOrder('created', 'DESC');
+        $faqCollection = Mage::getModel('helpfaq/faq')
+            ->getCollection()
+            ->addFieldToFilter('status', Help_Faq_Model_Source_Statuses::APPROVED_QUESTION)
+            ->setOrder('created', 'DESC');
         return $faqCollection;
     }
 

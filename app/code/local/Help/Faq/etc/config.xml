@@ -64,6 +64,25 @@
                 </children>
             </helpfaq>
         </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <faq>
+                                            <title>FAQ</title>
+                                        </faq>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
     </adminhtml>
     <frontend>
         <layout>
