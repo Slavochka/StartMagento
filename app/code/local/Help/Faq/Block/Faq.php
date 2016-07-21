@@ -30,6 +30,8 @@ class Help_Faq_Block_Faq extends Mage_Core_Block_Template
             ->getCollection()
             ->addFieldToFilter('status', Help_Faq_Model_Source_Statuses::APPROVED_QUESTION)
             ->setOrder('created', 'DESC');
+        
+        Mage::getModel('helpfaq/source_configUserInteractionFaq')->setDisplayedQuestions(count($faqCollection));
         return $faqCollection;
     }
 

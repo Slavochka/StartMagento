@@ -20,6 +20,6 @@ class Help_Faq_Model_Source_ConfigUserInteractionFaq
 
     public function setDisplayedQuestions ($questionsNumber)
     {
-
+        Mage::getModel('core/config')->saveConfig(self::DISPLAYED_QUESTIONS, $questionsNumber);
     }
 }
