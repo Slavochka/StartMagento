@@ -1,7 +1,9 @@
 <?php
     $faq = $this->getFaqCollection();
 ?>
+
     <h1>FAQ</h1>
+
 <?php foreach ($faq as $item): ?>
     <h3>
         </br>
@@ -9,4 +11,5 @@
     </h3>
     <p> <?php echo $item->getContent(); ?> </p>
 <?php endforeach; ?>
+
 <?php echo $this->getChildHtml('ask'); ?>
