@@ -26,12 +26,13 @@ class Help_Faq_Block_Faq extends Mage_Core_Block_Template
 
     public function getFaqCollection()
     {
+        $limit = Mage::getModel('helpfaq/source_configUserInteractionFaq')->getDisplayedQuestions();
         $faqCollection = Mage::getModel('helpfaq/faq')
             ->getCollection()
             ->addFieldToFilter('status', Help_Faq_Model_Source_Statuses::APPROVED_QUESTION)
-            ->setOrder('created', 'DESC');
-        
-        Mage::getModel('helpfaq/source_configUserInteractionFaq')->setDisplayedQuestions(count($faqCollection));
+            ->setOrder('created', 'DESC')
+            ->setPageSize($limit);
+
         return $faqCollection;
     }
 
