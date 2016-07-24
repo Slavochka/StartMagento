@@ -4,8 +4,17 @@ class Help_Faq_IndexController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
     {
-        $this->loadLayout();
-        $this->renderLayout();
+        $isEnabled = Mage::getModel('helpfaq/source_configUserInteractionFaq')->isEnabled();
+        //$isEnabled = true;
+        if ($isEnabled)
+        {
+            $this->loadLayout();
+            $this->renderLayout();
+        }
+        else
+        {
+            $this->norouteAction();
+        }
     }
 
     /*public function viewAction()

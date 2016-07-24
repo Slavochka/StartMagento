@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <tabs>
-        <faq translate="label" module="faq">
+        <faq translate="label" module="helpfaq">
             <label>User Interaction</label>
             <sort_order>500</sort_order>
         </faq>
     </tabs>
     <sections>
-        <faq translate="label" module="faq">
+        <faq translate="label" module="helpfaq">
             <label>FAQ</label>
             <tab>faq</tab>
             <sort_order>501</sort_order>
@@ -16,7 +16,7 @@
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
             <groups>
-                <fronend_view translate="label">
+                <frontend_view translate="label">
                     <label>Frontend View</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1</sort_order>
@@ -42,7 +42,7 @@
                             <show_in_store>1</show_in_store>
                         </displayed_questions>
                     </fields>
-                </fronend_view>
+                </frontend_view>
             </groups>
         </faq>
     </sections>
