@@ -1,15 +1,21 @@
 <?php
     $faq = $this->getFaqCollection();
+    $faqDetailsUrl = Mage::getUrl('faq/index/details');
 ?>
 
     <h1>FAQ</h1>
+    <br/>
 
 <?php foreach ($faq as $item): ?>
     <h3>
-        </br>
         <?php echo $item->getTitle(); ?>
     </h3>
     <p> <?php echo $item->getContent(); ?> </p>
+    <p align="right">
+        <a href="<?php echo $faqDetailsUrl; ?>?id=<?php echo $item->getId(); ?>">
+            <?php echo $this->__('Details'); ?>
+        </a>
+    </p>
 <?php endforeach; ?>
 
 <?php echo $this->getChildHtml('ask'); ?>

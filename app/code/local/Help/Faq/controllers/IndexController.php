@@ -17,22 +17,24 @@ class Help_Faq_IndexController extends Mage_Core_Controller_Front_Action
         }
     }
 
-    /*public function viewAction()
+    public function detailsAction()
     {
         $faqId = Mage::app()->getRequest()->getParam('id', 0);
         $faq = Mage::getModel('helpfaq/faq')->load($faqId);
+        Mage::register('faqItem', $faq);
 
         if ($faq->getId() > 0) {
             $this->loadLayout();
             // better Mage::registry
-            $this->getLayout()->getBlock('faq.content')->assign(array(
-                "faqItem" => $faq,
-            ));
+            $this->getLayout()->getBlock('faq.content');
+            Mage::registry('faqItem'
+                //array("faqItem" => $faq,)
+            );
             $this->renderLayout();
         } else {
             $this->_forward('noRoute');
         }
-    }*/
+    }
 
     public function saveAction()
     {
