@@ -8,14 +8,7 @@ class Help_Faq_Model_Source_ConfigUserInteractionFaq
 
     public function isEnabled ()
     {
-        if (Mage::getStoreConfig(self::ENABLED) == 1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (Mage::getStoreConfig(self::ENABLED) == 1) ? true : false;
     }
 
     public function getDisplayedQuestions ()

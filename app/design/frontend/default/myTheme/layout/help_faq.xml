@@ -7,9 +7,9 @@
             </block>
         </reference>
     </helpfaq_index_index>
-    <helpfaq_index_view>
+    <helpfaq_index_details>
         <reference name="content">
-            <block type="helpfaq/view" name="faq.content" template="help_faq/view.phtml" />
+            <block type="helpfaq/view" name="faq.content" template="help_faq/details.phtml" />
         </reference>
-    </helpfaq_index_view>
+    </helpfaq_index_details>
 </layout>

@@ -1,0 +1,15 @@
+</br></br>
+
+<h2>
+    <?php echo $this->__('Ask question') ?>
+</h2>
+
+<form action="<?php echo $this->getActionOfForm()?>" method="post">
+    <p> <?php echo $this->__('Enter name') ?><em>*</em>
+        <br/><input type="text" size="45" id="name" name="name"> </p>
+    <p> <?php echo $this->__('Enter e-mail') ?><em>*</em>
+        <br/><input type="text" size="45" id="email" name="email"> </p>
+    <p> <?php echo $this->__('Enter your question') ?><em>*</em>
+        <br/><textarea name="content" cols="47" rows="3" id="content" name="content"></textarea> </p>
+    <p><input type="submit" value="<?php echo $this->__('Ask') ?>"></p>
+</form>

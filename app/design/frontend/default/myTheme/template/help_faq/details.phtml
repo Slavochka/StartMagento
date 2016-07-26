@@ -1,0 +1,4 @@
+<h1><?php echo $faqItem->getName(); ?></h1>
+<p><?php echo $faqItem->getContent(); ?></p>
+<?php $date = new DateTime($faqItem->getCreated()); ?>
+<p><i>(<?php echo $date->format('d.m.Y'); ?>)</i></p>
