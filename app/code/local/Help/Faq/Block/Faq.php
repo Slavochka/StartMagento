@@ -40,4 +40,9 @@ class Help_Faq_Block_Faq extends Mage_Core_Block_Template
     {
         return $this->getUrl('faq/index/save');
     }
+    
+    public function getDetailsUrl ($id = 0)
+    {
+        return Mage::getUrl('faq/index/details', array('id' => $id));
+    }
 }
