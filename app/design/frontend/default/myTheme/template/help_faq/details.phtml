@@ -1,3 +1,4 @@
+<?php $faqItem = $this->getFaqItem(); ?>
 <h1><?php echo $faqItem->getName(); ?></h1>
 <p><?php echo $faqItem->getContent(); ?></p>
 <?php $date = new DateTime($faqItem->getCreated()); ?>
